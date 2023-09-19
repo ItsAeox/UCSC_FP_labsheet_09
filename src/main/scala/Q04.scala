@@ -5,12 +5,12 @@
 
     val bank: List[Account_Q4] = List(account_Q41, account_Q42, account_Q43)
 
-    println("Account_Q4s with negative balances:")
+    println("Accounts with negative balances:")
         val negativeBalance = bank.filter(account_Q4 => account_Q4.getBalance < 0)
         negativeBalance.foreach(account_Q4 => println(account_Q4))
 
     val sumOfBalances = bank.map(_.getBalance).sum
-        println(s"Sum of all account_Q4 balances: $sumOfBalances")
+        println(s"Sum of all account balances: $sumOfBalances")
 
     println("Final balances after applying interest:")
         bank.foreach(account_Q4 => {
@@ -44,7 +44,7 @@ class Account_Q4(private var balance: Double) {
         if (amount > 0 && amount <= balance) {
             withdraw(amount)
             toAccount_Q4.deposit(amount)
-            println(s"Transferred $amount from this account_Q4 to the target account_Q4.")
+            println(s"Transferred $amount from this account to the target account.")
         } else {
             println("Invalid transfer amount or insufficient balance.")
         }
@@ -57,5 +57,5 @@ class Account_Q4(private var balance: Double) {
         println(s"Applied interest. New balance: $balance")
     }
 
-    override def toString: String = s"Account_Q4 balance: $balance"
+    override def toString: String = s"Account balance: $balance"
 }
